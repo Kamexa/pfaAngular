@@ -1,0 +1,14 @@
+{
+    "posts": [
+      { "id": 1, "title": "json-server", "author": "typicode" }
+    ],
+    "projects": [
+      { "id": 1,
+        "category" : "category1",
+        "priority" : "premier",
+        "status" : "finished"
+      },
+      { "id": 2, "name": "some comment", "status" : false }
+    ],
+    "profile": { "name": "typicode" }
+  }
