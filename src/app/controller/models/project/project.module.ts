@@ -1,6 +1,5 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
 
 @NgModule({
@@ -10,7 +9,7 @@ import { CommonModule } from '@angular/common';
   ]
 })
 export class ProjectModule {
-   id ?: number;
-   name ?: string;
-   status ?: boolean;
- }
+  id ?: number;
+  name ?: string;
+  status ?: boolean;
+}

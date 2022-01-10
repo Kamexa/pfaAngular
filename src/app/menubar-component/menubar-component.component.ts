@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MenuItem} from 'primeng/api';
+
 @Component({
   selector: 'app-menubar-component',
   templateUrl: './menubar-component.component.html',
@@ -7,21 +8,28 @@ import {MenuItem} from 'primeng/api';
 })
 export class MenubarComponentComponent implements OnInit {
   items: MenuItem[] = [];
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit(): void {
     this.items = [
       {
         label: 'Home',
-        url : '/'
+        url: '/'
       },
       {
         label: 'Projects',
         icon: 'pi pi-fw pi-book',
-        url : '/projects'
+        url: '/projects'
       },
       {
-        label : 'Taches',
+        label: 'Tickets',
+        icon: 'pi pi-fw pi-bookmark',
+        url: '/tickets'
+      },
+      {
+        label: 'Tasks',
         icon: 'pi pi-fw pi-bookmark',
         url: '/taches'
       }

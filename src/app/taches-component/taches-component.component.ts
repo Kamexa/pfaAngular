@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+
 @Component({
   selector: 'app-taches-component',
   templateUrl: './taches-component.component.html',
   styleUrls: ['./taches-component.component.css']
 })
-export class TachesComponentComponent  {
+export class TachesComponentComponent {
 
   todo = ['Task1', 'Task2', 'Task3', 'Task4'];
   doing = ['Task5'];

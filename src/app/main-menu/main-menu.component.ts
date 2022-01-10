@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, Input, OnInit } from '@angular/core';
-import { ProjectModule } from '../controller/models/project/project.module';
-import { ProjectService } from '../controller/services/project.service';
+import {HttpClient} from '@angular/common/http';
+import {Component, Input, OnInit} from '@angular/core';
+import {ProjectModule} from '../controller/models/project/project.module';
+import {ProjectService} from '../controller/services/project.service';
 
 @Component({
   selector: 'app-main-menu',
@@ -11,14 +11,16 @@ import { ProjectService } from '../controller/services/project.service';
 
 export class MainMenuComponent implements OnInit {
 
-  @Input() projects: ProjectModule[] = [];
-  constructor(
-    private projectService : ProjectService
+  projects: ProjectModule[] = [];
+  hovered: boolean = false;
 
-  ) { }
+  constructor(
+    private projectService: ProjectService
+  ) {
+  }
 
   ngOnInit(): void {
-   this.projectService.findAll().subscribe((data: ProjectModule[])=> this.projects = { ...data});
-    }
+    this.projectService.findAll().subscribe((data: ProjectModule[]) => this.projects = data);
+  }
 
 }

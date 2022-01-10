@@ -1,13 +1,13 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {MainMenuComponent} from "./main-menu/main-menu.component";
 import {TachesComponentComponent} from "./taches-component/taches-component.component";
 import {TicketComponentComponent} from "./ticket-component/ticket-component.component";
 
 const routes: Routes = [
-  {path:'projects',component:MainMenuComponent},
-  {path:'taches',component:TachesComponentComponent},
-  {path:'tickets',component:TicketComponentComponent}
+  {path: 'projects', component: MainMenuComponent},
+  {path: 'taches', component: TachesComponentComponent},
+  {path: 'tickets', component: TicketComponentComponent}
 
 ];
 
@@ -15,4 +15,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

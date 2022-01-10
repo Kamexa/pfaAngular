@@ -106,5 +106,8 @@
       }
     }
   },
-  "defaultProject": "pfa-project"
+  "defaultProject": "pfa-project",
+  "cli": {
+    "analytics": "98a46fe6-6505-49b9-a2fc-269c512bacca"
+  }
 }

@@ -4,11 +4,10 @@
     ],
     "projects": [
       { "id": 1,
-        "category" : "category1",
-        "priority" : "premier",
-        "status" : "finished"
+        "name": "First",
+        "status" : true
       },
-      { "id": 2, "name": "some comment", "status" : false }
+      { "id": 2, "name": "Second Project", "status" : false }
     ],
     "profile": { "name": "typicode" }
   }

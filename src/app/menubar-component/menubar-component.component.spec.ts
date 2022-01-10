@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { MenubarComponentComponent } from './menubar-component.component';
+import {MenubarComponentComponent} from './menubar-component.component';
 
 describe('MenubarComponentComponent', () => {
   let component: MenubarComponentComponent;
@@ -8,9 +8,9 @@ describe('MenubarComponentComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MenubarComponentComponent ]
+      declarations: [MenubarComponentComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
