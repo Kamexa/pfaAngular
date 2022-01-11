@@ -1,13 +1,33 @@
 {
-    "posts": [
-      { "id": 1, "title": "json-server", "author": "typicode" }
-    ],
-    "projects": [
-      { "id": 1,
-        "name": "First",
-        "status" : true
-      },
-      { "id": 2, "name": "Second Project", "status" : false }
-    ],
-    "profile": { "name": "typicode" }
-  }
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "name": "First",
+      "status": true,
+      "dateDebut": "1974-09-07",
+      "dateFin": "2001-11-09"
+    },
+    {
+      "id": 2,
+      "name": "Second Project",
+      "status": false,
+      "dateDebut": "2017-09-07",
+      "dateFin": "2021-01-06"
+    }
+  ],
+  "tickets": [
+    {
+      "id": 2,
+      "name": "Ticket2",
+      "status": false,
+      "projectId": 2
+    }
+  ]
+}

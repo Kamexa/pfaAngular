@@ -6,10 +6,74 @@
     <span style="margin-right: 5%"> Status :</span><i class="pi pi-circle-on" [style]="project.status?'color:green':'color:red'"></i>
   </div>
 </div> -->
-<p-card [style]="{'background': 'rgb(174, 254, 255)','box-shadow': '0px 0px 9px 3px'}" header="{{project.name}}">
+<p-card (click)="showModalDialog()" [style]="{'background': 'rgb(174, 254, 255)','box-shadow': '0px 0px 9px 3px'}" header="{{project.name}}">
   <ng-template pTemplate="footer">
     <span style="margin-right: 5%"> Status :</span><i class="pi pi-circle-on"
                                                       [style]="project.status?'color:green':'color:red'"></i>
   </ng-template>
 </p-card>
+
+<p-dialog header="Project Details" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}"
+          [draggable]="false" [resizable]="false">
+  <div class="row">
+  <label>Name </label>
+  </div>
+  <div class="row">
+
+  <input type="text" pInputText [(ngModel)]="project.name">
+  </div>
+  <div class="row">
+    <label style="margin-right: 2%">Status :</label> <p-checkbox [(ngModel)]="project.status" [binary]="true" ></p-checkbox>
+</div>
+  <div class="row">
+    <label style="margin-right: 2%">Date Debut :</label>
+  </div>
+  <div class="row">
+    <p-calendar [(ngModel)]="project.dateDebut" dateFormat="yy-mm-dd"></p-calendar>
+  </div>
+  <div class="row">
+    <label style="margin-right: 2%">Date Fin :</label>
+  </div>
+  <div class="row">
+    <p-calendar [(ngModel)]="project.dateFin" dateFormat="yy-mm-dd"></p-calendar>
+  </div>
+  <div class="row">
+    <h5>Description</h5>
+    </div>
+    <div class="row">
+      <textarea rows="5" cols="30" pInputTextarea></textarea>
+    </div>
+
+
+  <p-table #dt [value]="tickets" [rows]="10" [paginator]="true" [globalFilterFields]="['id','name','status']" responsiveLayout="scroll"
+           [(selection)]="selectedTickets" [rowHover]="true" dataKey="id"
+           currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
+
+    <ng-template pTemplate="header">
+      <tr>
+        <th style="width: 3rem">
+          <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+        </th>
+        <th pSortableColumn="id">ID <p-sortIcon field="id"></p-sortIcon></th>
+        <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
+        <th pSortableColumn="status">Status <p-sortIcon field="status"></p-sortIcon></th>
+        <th></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-ticket>
+      <tr>
+        <td>
+          <p-tableCheckbox [value]="ticket"></p-tableCheckbox>
+        </td>
+        <td>{{ticket.id}}</td>
+        <td>{{ticket.name}}</td>
+        <td>{{ticket.status}}</td>
+        <td>
+          <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="deleteTicket(ticket)" ></button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+
+</p-dialog>
 

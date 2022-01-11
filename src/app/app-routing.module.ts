@@ -7,7 +7,7 @@ import {TicketComponentComponent} from "./ticket-component/ticket-component.comp
 const routes: Routes = [
   {path: 'projects', component: MainMenuComponent},
   {path: 'taches', component: TachesComponentComponent},
-  {path: 'tickets', component: TicketComponentComponent}
+  {path: 'tickets', component: TicketComponentComponent},
 
 ];
 

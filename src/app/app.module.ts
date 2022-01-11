@@ -1,6 +1,7 @@
 // Module Imports
 import {HttpClientModule} from '@angular/common/http';
 import {NgModule} from '@angular/core';
+import {CheckboxModule} from 'primeng/checkbox';
 import {BrowserModule} from '@angular/platform-browser';
 import {TableModule} from 'primeng/table';
 import {AppRoutingModule} from './app-routing.module';
@@ -12,6 +13,9 @@ import {ButtonModule} from 'primeng/button';
 import {MegaMenuModule} from "primeng/megamenu";
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {DialogModule} from 'primeng/dialog';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {CalendarModule} from 'primeng/calendar';
+import {InputTextareaModule} from 'primeng/inputtextarea';
 
 // Components Imports
 import {TachesComponentComponent} from './taches-component/taches-component.component';
@@ -20,6 +24,10 @@ import {MenubarComponentComponent} from './menubar-component/menubar-component.c
 import {AppComponent} from './app.component';
 import {SingleProjectComponent} from './single-project/single-project.component';
 import {CardModule} from 'primeng/card';
+import { SingleTicketComponent } from './single-ticket/single-ticket.component';
+import {FormsModule} from "@angular/forms";
+import {ConfirmDialogModule} from "primeng/confirmdialog";
+
 
 @NgModule({
   declarations: [
@@ -28,7 +36,8 @@ import {CardModule} from 'primeng/card';
     TachesComponentComponent,
     TicketComponentComponent,
     MenubarComponentComponent,
-    SingleProjectComponent
+    SingleProjectComponent,
+    SingleTicketComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +50,14 @@ import {CardModule} from 'primeng/card';
     NgbModule,
     MenubarModule,
     DragDropModule,
-    DialogModule
+    DialogModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    CheckboxModule,
+    CalendarModule,
+    InputTextareaModule,
+    ConfirmDialogModule,
+
   ],
   providers: [ProjectService],
   bootstrap: [AppComponent]

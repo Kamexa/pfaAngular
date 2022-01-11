@@ -12,4 +12,6 @@ export class ProjectModule {
   id ?: number;
   name ?: string;
   status ?: boolean;
+  dateDebut ?: Date;
+  dateFin ?: Date;
 }

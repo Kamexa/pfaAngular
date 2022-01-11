@@ -1,4 +1,7 @@
 import {Component, OnInit} from '@angular/core';
+import {TicketsModule} from "../controller/models/tickets/tickets.module";
+import {TicketsService} from "../controller/services/tickets.service";
+
 
 @Component({
   selector: 'app-ticket-component',
@@ -6,11 +9,12 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./ticket-component.component.css']
 })
 export class TicketComponentComponent implements OnInit {
-
-  constructor() {
+  tickets : TicketsModule[] = [];
+  constructor(private ticketService : TicketsService) {
   }
 
   ngOnInit(): void {
+    this.ticketService.findAll().subscribe((data: TicketsModule[]) => this.tickets= data);
   }
 
 }

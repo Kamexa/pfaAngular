@@ -1,1 +1,4 @@
-<p>ticket-component works!</p>
+<div class="container row">
+  <app-single-ticket class="singleProject col-md-4" *ngFor="let ticket of tickets"
+                      [ticket]="ticket"></app-single-ticket>
+</div>

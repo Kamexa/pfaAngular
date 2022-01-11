@@ -1,0 +1,6 @@
+<p-card [style]="{'background': 'rgb(174, 254, 255)','box-shadow': '0px 0px 9px 3px'}" header="{{ticket.name}}">
+  <ng-template pTemplate="footer">
+    <span style="margin-right: 5%"> Status :</span><i class="pi pi-circle-on"
+                                                      [style]="ticket.status?'color:green':'color:red'"></i>
+  </ng-template>
+</p-card>
