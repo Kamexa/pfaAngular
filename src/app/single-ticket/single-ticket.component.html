@@ -1,6 +1,41 @@
-<p-card [style]="{'background': 'rgb(174, 254, 255)','box-shadow': '0px 0px 9px 3px'}" header="{{ticket.name}}">
+<p-card (click)="showModalDialog()" [style]="{'background': 'rgb(174, 254, 255)','box-shadow': '0px 0px 9px 3px'}" header="{{ticket.name}}">
   <ng-template pTemplate="footer">
     <span style="margin-right: 5%"> Status :</span><i class="pi pi-circle-on"
                                                       [style]="ticket.status?'color:green':'color:red'"></i>
   </ng-template>
 </p-card>
+
+<p-dialog header="Ticket Details" [(visible)]="showModal" [modal]="true" [style]="{width: '40vw'}"
+          [draggable]="false" [resizable]="false">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row">
+        <label>Name </label>
+      </div>
+      <div class="row">
+        <input type="text" pInputText [(ngModel)]="ticket.name">
+      </div>
+      <div class="row" style="margin-top: 5%">
+        <label style="margin-right: 5%">Status :</label> <p-checkbox [(ngModel)]="ticket.status" [binary]="true" ></p-checkbox>
+      </div>
+      <div class="row">
+        <label style="margin-right: 2%">Date Debut :</label>
+      </div>
+      <div class="row">
+        <p-calendar  [(ngModel)]="ticket.dateDebut" dateFormat="yy-mm-dd"></p-calendar>
+      </div>
+      <div class="row">
+        <label style="margin-right: 2%">Date Fin :</label>
+      </div>
+      <div class="row">
+        <p-calendar [(ngModel)]="ticket.dateFin" dateFormat="yy-mm-dd"></p-calendar>
+      </div>
+      <div class="row">
+        <h5>Description</h5>
+      </div>
+      <div class="row">
+        <textarea rows="15" cols="70" pInputTextarea></textarea>
+      </div>
+    </div>
+  </div>
+</p-dialog>

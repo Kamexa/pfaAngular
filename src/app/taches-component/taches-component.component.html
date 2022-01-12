@@ -1,5 +1,7 @@
+<div class="col-md-6 mx-5">
+  Select a Ticket : <p-dropdown (onChange)="onChange()" [options]="tickets" [(ngModel)]="selectedTicket" placeholder="Select a City" optionLabel="name"></p-dropdown>
+</div>
 <div class="col-md-12 mx-5">
-
 <div class="example-container">
   <h2>To do</h2>
 
@@ -13,7 +15,6 @@
     <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
   </div>
 </div>
-
 <div class="example-container">
   <h2>Doing</h2>
 
@@ -27,7 +28,6 @@
     <div class="example-box" *ngFor="let item of doing" cdkDrag>{{item}}</div>
   </div>
 </div>
-
 <div class="example-container">
   <h2>Done</h2>
 
@@ -41,5 +41,4 @@
     <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
   </div>
 </div>
-
 </div>

@@ -27,7 +27,7 @@ import {CardModule} from 'primeng/card';
 import { SingleTicketComponent } from './single-ticket/single-ticket.component';
 import {FormsModule} from "@angular/forms";
 import {ConfirmDialogModule} from "primeng/confirmdialog";
-
+import {DropdownModule} from 'primeng/dropdown';
 
 @NgModule({
   declarations: [
@@ -42,6 +42,7 @@ import {ConfirmDialogModule} from "primeng/confirmdialog";
   imports: [
     BrowserModule,
     CardModule,
+    DropdownModule,
     AppRoutingModule,
     HttpClientModule,
     TableModule,

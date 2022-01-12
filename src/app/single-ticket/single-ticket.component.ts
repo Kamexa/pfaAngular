@@ -8,9 +8,13 @@ import {TicketsModule} from "../controller/models/tickets/tickets.module";
 })
 export class SingleTicketComponent implements OnInit {
   @Input() ticket: TicketsModule = new TicketsModule();
+  showModal = false;
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  showModalDialog() {
+    this.showModal = true;
+  }
 }

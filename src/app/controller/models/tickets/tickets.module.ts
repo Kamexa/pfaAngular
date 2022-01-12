@@ -14,4 +14,6 @@ export class TicketsModule {
   name ?: string;
   status ?: boolean;
   projectId ?: number;
+  dateDebut ?: Date;
+  dateFin ?: Date;
 }

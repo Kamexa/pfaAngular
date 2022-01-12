@@ -5,8 +5,12 @@ import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule
-  ]
+  imports: []
 })
-export class TachesModule { }
+export class TachesModule {
+  id : number | undefined;
+  name : string | undefined;
+  description : string | undefined;
+  ticketId : number | undefined;
+  status : string | undefined;
+}
