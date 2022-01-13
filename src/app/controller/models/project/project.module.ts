@@ -14,4 +14,5 @@ export class ProjectModule {
   status ?: boolean;
   dateDebut ?: Date;
   dateFin ?: Date;
+  Description ?:string;
 }

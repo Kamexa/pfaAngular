@@ -28,6 +28,7 @@ import { SingleTicketComponent } from './single-ticket/single-ticket.component';
 import {FormsModule} from "@angular/forms";
 import {ConfirmDialogModule} from "primeng/confirmdialog";
 import {DropdownModule} from 'primeng/dropdown';
+import { NewprojectModalComponent } from './newproject-modal/newproject-modal.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import {DropdownModule} from 'primeng/dropdown';
     MenubarComponentComponent,
     SingleProjectComponent,
     SingleTicketComponent,
+    NewprojectModalComponent,
   ],
   imports: [
     BrowserModule,

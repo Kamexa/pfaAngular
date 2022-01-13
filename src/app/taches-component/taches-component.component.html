@@ -1,3 +1,6 @@
+<div class="row container" style="margin-left: 2%">
+  <button pButton pRipple (click)="showModalDialog()" type="button" icon="pi pi-plus" label="Create Task" class="p-button-raised p-button-success"></button>
+</div>
 <div class="col-md-6 mx-5">
   Select a Ticket : <p-dropdown (onChange)="onChange()" [options]="tickets" [(ngModel)]="selectedTicket" placeholder="Select a City" optionLabel="name"></p-dropdown>
 </div>
@@ -42,3 +45,35 @@
   </div>
 </div>
 </div>
+<p-dialog header="New Project" [(visible)]="displayModal" [modal]="true" [style]="{width: '70vw'}"
+          [draggable]="false" [resizable]="false">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="row">
+        <label>Name </label>
+      </div>
+      <div class="row">
+        <input class="col-md-12" type="text" pInputText [(ngModel)]="task.name">
+      </div>
+      <div class="row">
+        <label style="margin-right : 2%">Ticket</label>
+      </div>
+      <div class="row">
+        <p-dropdown [options]="tasks" [(ngModel)]="task.ticketId" placeholder="Select a Ticket" optionLabel="ticketId" [showClear]="true"></p-dropdown>
+      </div>
+      <div class="row" style="margin-top: 5%">
+        <label style="margin-right: 5%">Status :</label> <p-checkbox [(ngModel)]="task.status" [binary]="true" ></p-checkbox>
+      </div>
+      <div class="row">
+        <h5>Description</h5>
+      </div>
+      <div class="row">
+        <textarea [(ngModel)]="task.description" rows="15" cols="30" pInputTextarea></textarea>
+      </div>
+    </div>
+
+  </div>
+  <ng-template pTemplate="footer">
+    <p-button icon="pi pi-check" (click)="newTaskClick()" label="Create Task" styleClass="p-button-text"></p-button>
+  </ng-template>
+</p-dialog>

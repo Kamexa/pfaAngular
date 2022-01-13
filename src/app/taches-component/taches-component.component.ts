@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 import {TicketsService} from "../controller/services/tickets.service";
 import {TachesModule} from "../controller/models/taches/taches.module";
@@ -11,16 +11,19 @@ import {TicketsModule} from "../controller/models/tickets/tickets.module";
   styleUrls: ['./taches-component.component.css']
 })
 export class TachesComponentComponent implements OnInit{
-
-  tickets : TicketsModule[] = []
+  displayModal: boolean = false;
+  tickets : TicketsModule[] = [];
+  tasks : TachesModule[] = [];
   selectedTicket : TicketsModule = new TicketsModule()
   todo : string[] = [];
   doing : string[] = [];
   done : string[] = [];
-
+  showModalDialog() {
+    this.displayModal = true;
+  }
   constructor(private tachesService: TachesService,private ticketsService : TicketsService) {
   }
-
+@Input() task: TachesModule = new TachesModule();
   ngOnInit(): void {
     this.ticketsService.findAll().subscribe((data) => {
       console.log('this is all the data ', data)
@@ -62,5 +65,10 @@ export class TachesComponentComponent implements OnInit{
         if (d.status == "done") this.done.push(d.name!)
       })
     })
+  }
+  newTaskClick(){
+    this.tachesService.createTasks(this.task).subscribe((data : {}) =>{
+      console.log(data);
+    });
   }
 }

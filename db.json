@@ -12,14 +12,24 @@
       "name": "First",
       "status": true,
       "dateDebut": "1974-09-07",
-      "dateFin": "2001-11-09"
+      "dateFin": "2001-11-09",
+      "Description": "description1"
     },
     {
       "id": 2,
       "name": "Second Project",
       "status": false,
       "dateDebut": "2017-09-07",
-      "dateFin": "2021-01-06"
+      "dateFin": "2021-01-06",
+      "Description": "description2"
+    },
+    {
+      "id": 3,
+      "name": "Third",
+      "status": true,
+      "dateDebut": "1974-09-07",
+      "dateFin": "2001-11-09",
+      "Description": "description3"
     }
   ],
   "tickets": [
@@ -40,12 +50,48 @@
       "projectId": 2
     }
   ],
-  "tasks" : [
-    {"id": 1,"name": "Task1","description" :  "","ticketId" :  1,"status": "todo"},
-    {"id": 2,"name": "Task2","description" :  "","ticketId" :  1,"status": "doing"},
-    {"id": 3,"name": "Task3","description" :  "","ticketId" :  1,"status": "done"},
-    {"id": 4,"name": "Task4","description" :  "","ticketId" :  2,"status": "todo"},
-    {"id": 5,"name": "Task5","description" :  "","ticketId" :  2,"status": "doing"},
-    {"id": 6,"name": "Task6","description" :  "","ticketId" :  2,"status": "done"}
+  "tasks": [
+    {
+      "id": 1,
+      "name": "Task1",
+      "description": "",
+      "ticketId": 1,
+      "status": "todo"
+    },
+    {
+      "id": 2,
+      "name": "Task2",
+      "description": "",
+      "ticketId": 1,
+      "status": "doing"
+    },
+    {
+      "id": 3,
+      "name": "Task3",
+      "description": "",
+      "ticketId": 1,
+      "status": "done"
+    },
+    {
+      "id": 4,
+      "name": "Task4",
+      "description": "",
+      "ticketId": 2,
+      "status": "todo"
+    },
+    {
+      "id": 5,
+      "name": "Task5",
+      "description": "",
+      "ticketId": 2,
+      "status": "doing"
+    },
+    {
+      "id": 6,
+      "name": "Task6",
+      "description": "",
+      "ticketId": 2,
+      "status": "done"
+    }
   ]
 }

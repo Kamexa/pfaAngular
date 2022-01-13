@@ -42,7 +42,7 @@
     <h5>Description</h5>
     </div>
     <div class="row">
-      <textarea rows="15" cols="30" pInputTextarea></textarea>
+      <textarea [(ngModel)]="project.Description" rows="15" cols="30" pInputTextarea></textarea>
     </div>
     </div>
     <div class="col-md-8">
@@ -77,5 +77,8 @@
   </p-table>
     </div>
   </div>
+  <ng-template pTemplate="footer">
+    <button pButton pRipple (click)="deleteProjectClick(project)" type="button" icon="pi pi-times" label="Delete" class="p-button-raised p-button-danger"></button>
+  </ng-template>
 </p-dialog>
 

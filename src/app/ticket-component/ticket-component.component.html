@@ -1,4 +1,47 @@
+<div class="row container" style="margin-left: 2%">
+  <button pButton pRipple (click)="showModalDialog()" type="button" icon="pi pi-plus" label="Create Ticket" class="p-button-raised p-button-success"></button>
+</div>
 <div class="container row">
   <app-single-ticket class="singleProject col-md-4" *ngFor="let ticket of tickets"
                       [ticket]="ticket"></app-single-ticket>
 </div>
+<p-dialog header="New Ticket" [(visible)]="displayModal" [modal]="true" [style]="{width: '70vw'}"
+          [draggable]="false" [resizable]="false">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="row">
+        <label>Name </label>
+      </div>
+      <div class="row">
+        <input class="col-md-12" type="text" pInputText [(ngModel)]="ticket.name">
+      </div>
+      <div class="row">
+        <label style="margin-right : 2%">Project</label>
+      </div>
+      <div class="row">
+        <p-dropdown [options]="tickets" [(ngModel)]="ticket.projectId" placeholder="Select a Project" optionLabel="projectId" [showClear]="true"></p-dropdown>
+      </div>
+      <div class="row" style="margin-top: 5%">
+        <label style="margin-right: 5%">Status :</label> <p-checkbox [(ngModel)]="ticket.status" [binary]="true" ></p-checkbox>
+      </div>
+      <div class="row">
+        <label style="margin-right: 2%">Date Debut :</label>
+      </div>
+      <div class="row">
+        <p-calendar [(ngModel)]="ticket.dateDebut" dateFormat="yy-mm-dd"></p-calendar>
+      </div>
+      <div class="row">
+        <label style="margin-right: 2%">Date Fin :</label>
+      </div>
+      <div class="row">
+        <p-calendar [(ngModel)]="ticket.dateFin" dateFormat="yy-mm-dd"></p-calendar>
+      </div>
+
+
+    </div>
+
+  </div>
+  <ng-template pTemplate="footer">
+    <p-button icon="pi pi-check" (click)="newTicketClick()" label="Create Ticket" styleClass="p-button-text"></p-button>
+  </ng-template>
+</p-dialog>
