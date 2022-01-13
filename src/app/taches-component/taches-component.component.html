@@ -1,7 +1,8 @@
-<div class="row container" style="margin-left: 2%">
-  <button pButton pRipple (click)="showModalDialog()" type="button" icon="pi pi-plus" label="Create Task" class="p-button-raised p-button-success"></button>
-</div>
+<script src="../controller/services/taches.service.ts"></script>
+
+
 <div class="col-md-6 mx-5">
+  <button pButton pRipple (click)="showModalDialog()" type="button" icon="pi pi-plus" label="Create Task" class="p-button-raised p-button-success"></button>
   Select a Ticket : <p-dropdown (onChange)="onChange()" [options]="tickets" [(ngModel)]="selectedTicket" placeholder="Select a City" optionLabel="name"></p-dropdown>
 </div>
 <div class="col-md-12 mx-5">
@@ -59,10 +60,7 @@
         <label style="margin-right : 2%">Ticket</label>
       </div>
       <div class="row">
-        <p-dropdown [options]="tasks" [(ngModel)]="task.ticketId" placeholder="Select a Ticket" optionLabel="ticketId" [showClear]="true"></p-dropdown>
-      </div>
-      <div class="row" style="margin-top: 5%">
-        <label style="margin-right: 5%">Status :</label> <p-checkbox [(ngModel)]="task.status" [binary]="true" ></p-checkbox>
+        <p-dropdown [options]="tickets" [(ngModel)]="selectedTicket" placeholder="Select a Ticket" optionLabel="name" [showClear]="true"></p-dropdown>
       </div>
       <div class="row">
         <h5>Description</h5>

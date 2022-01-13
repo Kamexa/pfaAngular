@@ -51,6 +51,10 @@ export class TachesComponentComponent implements OnInit{
         event.previousIndex,
         event.currentIndex,
       );
+      console.log(event.previousContainer);
+      console.log(event.container);
+
+
     }
   }
 
@@ -67,6 +71,8 @@ export class TachesComponentComponent implements OnInit{
     })
   }
   newTaskClick(){
+    this.task.status = "todo";
+    this.task.ticketId = this.selectedTicket.id;
     this.tachesService.createTasks(this.task).subscribe((data : {}) =>{
       console.log(data);
     });

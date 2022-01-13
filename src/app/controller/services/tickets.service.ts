@@ -27,8 +27,13 @@ export class TicketsService {
      return this.httpClient.delete('http://localhost:3000/tickets/'+projectId)
   }
   createTicket(ticket: TicketsModule) {
-    ticket.id = Math.random();
+    ticket.id = Math.floor(Math.random() * 690)+100;
     return this.httpClient.post<TicketsModule>('http://localhost:3000/tickets',ticket,this.httpOptions);
   }
+  public deleteTicket(id : Number){
+    return this.httpClient.delete('http://localhost:3000/tickets/'+id,this.httpOptions);
+  }
+  public updateTicket(id : Number){
 
+  }
 }

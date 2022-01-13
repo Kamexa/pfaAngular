@@ -24,12 +24,20 @@ export class MainMenuComponent implements OnInit {
   }
 @Input() project: ProjectModule = new ProjectModule();
   ngOnInit(): void {
-    this.projectService.findAll().subscribe((data: ProjectModule[]) => this.projects = data);
+    this.projectService.findAll().subscribe((data: ProjectModule[]) => {
+      data.forEach((d )=> {
+        d.dateDebut = d.dateDebut!.split('T')[0];
+        d.dateFin = d.dateFin!.split('T')[0];
+        this.projects.push(d);
+      })
+    });
   }
   newProjectClick(){
     this.projectService.createProject(this.project).subscribe((data : {}) =>{
       console.log(data);
     });
+    this.projects.push(this.project);
+    this.project = new ProjectModule();
   }
 
 }

@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {TicketsModule} from "../controller/models/tickets/tickets.module";
+import {TicketsService} from "../controller/services/tickets.service";
 
 @Component({
   selector: 'app-single-ticket',
@@ -9,12 +10,17 @@ import {TicketsModule} from "../controller/models/tickets/tickets.module";
 export class SingleTicketComponent implements OnInit {
   @Input() ticket: TicketsModule = new TicketsModule();
   showModal = false;
-  constructor() { }
+  constructor(private ticketService : TicketsService) { }
 
   ngOnInit(): void {
   }
 
   showModalDialog() {
     this.showModal = true;
+  }
+  deleteTicketClick(ticket : TicketsModule){
+    this.ticketService.deleteTicket(ticket.id!).subscribe((data : {})=>{
+      console.log(data);
+    });
   }
 }

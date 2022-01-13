@@ -1,8 +1,9 @@
 <div class="row container" style="margin-left: 2%">
   <button pButton pRipple (click)="showModalDialog()" type="button" icon="pi pi-plus" label="Create Ticket" class="p-button-raised p-button-success"></button>
 </div>
+
 <div class="container row">
-  <app-single-ticket class="singleProject col-md-4" *ngFor="let ticket of tickets"
+  <app-single-ticket class="singleProject col-md-4" *ngFor="let ticket of tickets "
                       [ticket]="ticket"></app-single-ticket>
 </div>
 <p-dialog header="New Ticket" [(visible)]="displayModal" [modal]="true" [style]="{width: '70vw'}"
@@ -19,7 +20,7 @@
         <label style="margin-right : 2%">Project</label>
       </div>
       <div class="row">
-        <p-dropdown [options]="tickets" [(ngModel)]="ticket.projectId" placeholder="Select a Project" optionLabel="projectId" [showClear]="true"></p-dropdown>
+        <p-dropdown [options]="projects" [(ngModel)]="selectedProject" placeholder="Select a Project" optionLabel="id"></p-dropdown>
       </div>
       <div class="row" style="margin-top: 5%">
         <label style="margin-right: 5%">Status :</label> <p-checkbox [(ngModel)]="ticket.status" [binary]="true" ></p-checkbox>

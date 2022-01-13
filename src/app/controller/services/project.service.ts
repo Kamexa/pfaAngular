@@ -23,7 +23,7 @@ export class ProjectService {
     return this.httpClient.get<ProjectModule[]>('http://localhost:3000/projects');
   }
    createProject(project: ProjectModule) {
-    project.id = Math.random();
+    project.id = Math.floor(Math.random() * 690) + 100;
      return this.httpClient.post<ProjectModule>('http://localhost:3000/projects',project,this.httpOptions);
   }
 

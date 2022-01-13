@@ -23,7 +23,7 @@ export class TachesService {
     return this.httpClient.get<TachesModule[]>('http://localhost:3000/tasks?ticketId='+ticketId)
   }
   createTasks(tache: TachesModule) {
-    tache.id = Math.random();
+    tache.id = Math.floor(Math.random() * 690)+100;
     return this.httpClient.post<TachesModule>('http://localhost:3000/tasks',tache,this.httpOptions);
   }
 }
