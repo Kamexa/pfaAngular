@@ -51,8 +51,22 @@ export class TachesComponentComponent implements OnInit{
         event.previousIndex,
         event.currentIndex,
       );
-      console.log(event.previousContainer);
-      console.log(event.container);
+      console.log(event.previousContainer.data);
+      console.log(event.container.id);
+      this.tasks.forEach((task)=>{
+        if(event.container.id == 'cdk-drop-list-0'){
+          task.status = 'todo';
+        }
+        if(event.container.id == 'cdk-drop-list-1'){
+          task.status = 'doing';
+        }
+        if(event.container.id == 'cdk-drop-list-2'){
+          task.status = 'done';
+        }
+        this.tachesService.updateAll(task.id!,task).subscribe((data)=>{
+          console.log(data);
+        })
+      })
 
 
     }
@@ -73,8 +87,29 @@ export class TachesComponentComponent implements OnInit{
   newTaskClick(){
     this.task.status = "todo";
     this.task.ticketId = this.selectedTicket.id;
-    this.tachesService.createTasks(this.task).subscribe((data : {}) =>{
+    this.tachesService.createTasks(this.task).subscribe((data ) =>{
       console.log(data);
     });
+    this.todo.push(this.task.name!);
+  }
+
+  deleteTask(test : string){
+    this.tachesService.findByName(test).subscribe((data)=>{
+      console.log(data);
+      this.tachesService.deleteById(data[0].id!).subscribe((data )=>{
+        console.log(data);
+        this.tachesService.findByTicketId(this.selectedTicket.id!).subscribe((data)=>{
+          this.todo = [];
+          this.doing = [];
+          this.done = [];
+          data.forEach((d) => {
+            if (d.status == "todo") this.todo.push(d.name!)
+            if (d.status == "doing") this.doing.push(d.name!)
+            if (d.status == "done") this.done.push(d.name!)
+          })
+        })
+      })
+    })
+
   }
 }

@@ -22,36 +22,6 @@
       "dateDebut": "2017-09-07",
       "dateFin": "2021-01-06",
       "Description": "description2"
-    },
-    {
-      "id": 3,
-      "name": "Third",
-      "status": true,
-      "dateDebut": "1974-09-07",
-      "dateFin": "2001-11-09",
-      "Description": "description3"
-    },
-    {
-      "name": "Fourth",
-      "status": false,
-      "dateDebut": "2022-01-02T23:00:00.000Z",
-      "dateFin": "2022-01-30T23:00:00.000Z",
-      "Description": "ghtg",
-      "id": 0.3271404446101043
-    },
-    {
-      "name": "Fifth",
-      "dateDebut": "2022-01-03T23:00:00.000Z",
-      "dateFin": "2022-01-30T23:00:00.000Z",
-      "Description": "thyh",
-      "id": 0.03284962066816721
-    },
-    {
-      "name": "Mohammed six",
-      "dateDebut": "2022-01-03T23:00:00.000Z",
-      "dateFin": "2022-01-29T23:00:00.000Z",
-      "Description": "gt",
-      "id": 0.9128532635968589
     }
   ],
   "tickets": [
@@ -62,36 +32,34 @@
       "dateDebut": "2018-07-03",
       "dateFin": "2020-01-06",
       "projectId": 1
+    },
+    {
+      "name": "ticket2",
+      "dateDebut": "2022-01-17T23:00:00.000Z",
+      "dateFin": "2022-01-30T23:00:00.000Z",
+      "status": true,
+      "projectId": 2,
+      "id": 560
     }
   ],
   "tasks": [
     {
-      "id": 1,
       "name": "Task1",
-      "description": "",
-      "ticketId": 1,
-      "status": "todo"
-    },
-    {
-      "id": 2,
-      "name": "Task2",
-      "description": "",
-      "ticketId": 1,
-      "status": "doing"
-    },
-    {
-      "id": 3,
-      "name": "Task3",
-      "description": "",
-      "ticketId": 1,
-      "status": "done"
-    },
-    {
-      "name": "testTASKRE",
-      "description": "test",
       "status": "todo",
       "ticketId": 1,
-      "id": 0.06522863617487373
+      "id": 289
+    },
+    {
+      "name": "Task2",
+      "status": "todo",
+      "ticketId": 1,
+      "id": 170
+    },
+    {
+      "name": "Task3",
+      "status": "todo",
+      "ticketId": 1,
+      "id": 240
     }
   ]
 }

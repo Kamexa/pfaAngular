@@ -42,4 +42,10 @@ export class TicketComponentComponent implements OnInit {
     this.ticket = new TicketsModule();
   }
 
+  onChange(){
+    this.ticketService.findTicketByProjectId(this.selectedProject.id!).subscribe((data )=> {
+      console.log(data);
+      this.tickets = data;
+    })
+  }
 }

@@ -1,5 +1,6 @@
 <div class="row container" style="margin-left: 2%">
   <button pButton pRipple (click)="showModalDialog()" type="button" icon="pi pi-plus" label="Create Ticket" class="p-button-raised p-button-success"></button>
+  Select a Project : <p-dropdown (onChange)="onChange()" [options]="projects" [(ngModel)]="selectedProject" placeholder="Select a Project" optionLabel="name"></p-dropdown>
 </div>
 
 <div class="container row">

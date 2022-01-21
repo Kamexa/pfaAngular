@@ -16,7 +16,8 @@
     [cdkDropListConnectedTo]="[doingList,doneList]"
     class="example-list"
     (cdkDropListDropped)="drop($event)">
-    <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
+    <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item }}<p-button (click)="deleteTask(item)">delete</p-button></div>
+
   </div>
 </div>
 <div class="example-container">
@@ -29,7 +30,7 @@
     [cdkDropListConnectedTo]="[doneList,todoList]"
     class="example-list"
     (cdkDropListDropped)="drop($event)">
-    <div class="example-box" *ngFor="let item of doing" cdkDrag>{{item}}</div>
+    <div class="example-box" *ngFor="let item of doing" cdkDrag>{{item}}<p-button (click)="deleteTask(item)">delete</p-button></div>
   </div>
 </div>
 <div class="example-container">
@@ -42,7 +43,7 @@
     [cdkDropListConnectedTo]="[todoList,doingList]"
     class="example-list"
     (cdkDropListDropped)="drop($event)">
-    <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+    <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}<p-button (click)="deleteTask(item)">delete</p-button></div>
   </div>
 </div>
 </div>
